@@ -27,7 +27,7 @@ class Category extends Model
         return $this->hasMany(Category::class, 'parent_id');
     }
 
-    // 📌 Optional: Scope để lấy danh mục gốc
+    // 📌 Optional: Scope để lấy danh mục gốc.
     public function scopeRoot($query)
     {
         return $query->whereNull('parent_id');
