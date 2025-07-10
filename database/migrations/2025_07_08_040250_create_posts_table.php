@@ -21,7 +21,9 @@ return new class extends Migration {
             $table->string('featured_image')->nullable();
 
             $table->enum('status', ['draft', 'published'])->default('draft');
-            $table->timestamp('published_at')->nullable();
+
+            // Đã gộp đúng: thêm 'published_at' sau 'status'
+            $table->timestamp('published_at')->nullable()->after('status');
 
             $table->string('meta_title')->nullable();
             $table->string('meta_keywords')->nullable();
